@@ -1,8 +1,8 @@
 /// <reference types="cypress" />
-/// <reference types="cypress-iframe" />
+// <reference types="cypress-iframe" />
 //Import class containing objects common to pages
 import CommonObjects from '../eCommerce/pageobjects/CommonObjects.spec'
-import 'cypress-iframe'
+//import 'cypress-iframe'
 
 describe('eCommerce Test Set', () => {
 
@@ -14,7 +14,10 @@ describe('eCommerce Test Set', () => {
    
 it('hits homepage then chooses next page', () => {
 
-  cy.visit('http://automationpractice.com/index.php')
+  //Set in C:\Dev Stuff\cypress\cypress.json
+  //cy.visit('http://automationpractice.com/index.php')
+
+  cy.visit(Cypress.env('eCommerceURL'))
 
   //cy.contains('Women').click()
   cy.get('.sf-menu > :nth-child(3)').click()
